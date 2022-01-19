@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<?xml-stylesheet type="text/css" href="style.css"?>
-<!DOCTYPE menuInfo
-[
-  <!ELEMENT menuInfo (title, summary, effectiveDate, menu+)>
-  <!ELEMENT menu (category, menuItem)>
-  <!ELEMENT category (#PCDATA)>
-  <!ELEMENT menuItem (itemName, description, price, indicator+)>
-  <!ELEMENT itemName (originalName, oldName)>
-  <!ELEMENT description (#PCDATA)>
-  <!ELEMENT price (#PCDATA)>
-  <!ELEMENT indicator (#PCDATA)>
-  <!ELEMENT title (#PCDATA)>
-  <!ELEMENT summary (#PCDATA)>
-  <!ELEMENT effectiveDate (#PCDATA)>
-  <!ELEMENT originalName (#PCDATA)>
-  <!ELEMENT oldName (#PCDATA)>
-]>
+1.  ![image info](/err.jpg)
+
+    Attriute error in <effectivedate> tag.
+    The correct tag format is <effectivedate></effectivedate> 
+
+2. In CDDATA, the text are not considered as markup. Parser can not parse it in XML Document.
+
+3. ![image info](/q3.jpg)
+
+4.  Prolog: <?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+
+Document Body: 
 <menuInfo>
   <title>Chester's Breakfast Menu</title>
   <summary>
@@ -25,7 +19,7 @@
     up just the way you like them!!
     ]]>
   </summary>
-  <effectiveDate>03/12/2016</effectiveDate>
+  <effective Date>03/12/2016</effective Date>
   <menu>
     <category>Traditional Favorites</category>
     <menuItem>
@@ -42,13 +36,7 @@
         ]]>
       </description>
       <price>7.95</price>
-      <indicator>&#9829;</indicator>
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
-  </menu>
-  <menu>
-  <category>Traditional</category>
     <menuItem>
       <itemName>
         <originalName> Fresh Mornin' Sampler </originalName>
@@ -72,7 +60,6 @@
     <menuItem>
       <itemName>
         <originalName> Oatmeal Breakfast </originalName>
-        <oldName> Mornin' Sampler </oldName>
       </itemName>
       <description>
         <![CDATA[
@@ -87,9 +74,6 @@
       <indicator>&#9830;</indicator>  <!-- low-sodium -->
       <indicator>&#9824;</indicator>  <!-- vegan -->  
     </menuItem>
-  </menu>
-  <menu>
-  <category>Lite</category>
     <menuItem>
       <itemName>
         <originalName> Chester's Meat Platter </originalName>
@@ -103,14 +87,18 @@
         ]]>
       </description>
       <price>12.95</price>
-      <indicator>&#9832;</indicator> <!-- Low-carb -->
-      <indicator>&#9830;</indicator>  <!-- low-sodium -->
-      <indicator>&#9824;</indicator>  <!-- vegan -->  
+      <indicator>&#9832;</indicator>  <!-- Low-carb -->
     </menuItem>
   </menu>
 </menuInfo>
 
-<!--
-  Name: Raj Chauhan
-  Student_id: N01494277
--->
+Epilog:
+
+5. ![image info](/q5.jpg)
+
+6. ![image info](/q6.jpg)
+
+7. added style.css
+
+
+
