@@ -1,0 +1,12 @@
+<!DOCTYPE names [
+    <!ELEMENT names (name+)>
+    <!ELEMENT name (nameName, availableSizes, prices)>
+    <!ATTLIST name id ID #REQUIRED>
+    <!ELEMENT pname (#PCDATA)>
+    <!ELEMENT sizes (size+)>
+    <!ATTLIST size description CDATA #REQUIRED>
+    <!ELEMENT size (#PCDATA)>
+    <!ELEMENT prices (price+)>
+    <!ATTLIST price currency CDATA #REQUIRED>
+    <!ELEMENT price (#PCDATA)>
+]>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "index.dtd">
+<!DOCTYPE names SYSTEM "index.xsd">
+
+
+<names>
+    <name id="a332d8d2-86d7-11ec-a8a3-0242ac120002">
+        <pname>Microfleece hoodie</pname>
+        <sizes>
+            <size description="xs">0 items</size>
+            <size description="s">3 items</size>
+            <size description="m">13 items</size>
+            <size description="l">5 items</size>
+            <size description="xl">2 items</size>
+        </sizes>
+        <prices>
+            <price currency="USD">USD&#36;49.99</price>
+            <price currency="CAD">CAD&#36;59.99</price>
+        </prices>
+    </name>
+    <name id="a332dac6-86d7-11ec-a8a3-0242ac120002">
+        <pname>Vintage Soft Hoodie</pname>
+        <sizes>
+            <size description="xs">3 items</size>
+            <size description="s">8 items</size>
+            <size description="m">25 items</size>
+            <size description="l">12 items</size>
+            <size description="xl">4 items</size>
+        </sizes>
+        <prices>
+            <price currency="USD">USD&#36;39.99</price>
+            <price currency="CAD">CAD&#36;49.99</price>
+        </prices>
+    </name>
+    <name id="a332dbf2-86d7-11ec-a8a3-0242ac120002">
+        <pname>Crewneck Sweatshirt</pname>
+        <sizes>
+            <size description="xs">0 items</size>
+            <size description="s">0 items</size>
+            <size description="m">15 items</size>
+            <size description="l">13 items</size>
+            <size description="xl">0 items</size>
+        </sizes>
+        <prices>
+            <price currency="CAD">CAD&#36;47.97</price>
+        </prices>
+    </name>
+    <name id="a332dd0a-86d7-11ec-a8a3-0242ac120002">
+        <pname>French Terry Raglan Crewneck Sweatshirt</pname>
+        <sizes>
+            <size description="xs">0 items</size>
+            <size description="s">0 items</size>
+            <size description="m">0 items</size>
+            <size description="l">1 items</size>
+            <size description="xl">0 items</size>
+        </sizes>
+        <prices>
+            <price currency="USD">USD&#36;37.97</price>
+        </prices>
+    </name>
+</names>
