@@ -1,19 +1,19 @@
-const q = ms => new Promise(function (resolve) {
+const p= ms => new Promise(function (resolve) {
   setTimeout(resolve, ms)
 });
 
-const inc = (a) => q(3000).then(() => a + 1);
+const inc = (a) => p(3000).then(() => a + 1);
 
-const sum = (a, b) => q(3000).then(() => a + b);
+const sum = (a, b) => p(3000).then(() => a + b);
 
-const max = (a, b) => q(3000).then(() => a > b ? a : b);
+const max = (a, b) => p(3000).then(() => a > b ? a : b);
 
-const avg = (a, b) => q(3000).then(() => sum(a, b)).then(s => s / 2);
+const avg = (a, b) => p(3000).then(() => sum(a, b)).then(s => s / 2);
 
 const obj = {
 name: "Marcus Aurelius",
 split(sep = " ") {
-  return q(3000).then(() => this.name.split(sep));
+  return p(3000).then(() => this.name.split(sep));
 },
 };
 
