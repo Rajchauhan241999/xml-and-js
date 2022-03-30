@@ -1,41 +1,36 @@
-const http = require("http");
+const http = require('http');
 
-const product = require("./controllers/product");
+const people = require("./people");
 
-const parseURLParams = (value) => {
-  const params = new URLSearchParams(value);
+const parseURLParams = (paramsString) => {
+    const params = new URLSearchParams(paramsString);
 
-  return Array.from(params.entries()).reduce(
-    (acc, [key, value]) => ({ ...acc, [key]: value }),
-    {}
-  );
-};
+    return Array.from(params.entries()).reduce((acc, [key, value]) => ({ ...acc, [key]: value}), {})
+}
 
-const server = http.createServer(async (req, res) => {
-  const [basePath, paramsString] = req.url.split("?");
-  
-  if (basePath === "/assignments/assignment/products" && req.method === "GET") {
-    const params = parseURLParams(paramsString);
+const server = http.createServer(async(req, res) => {
 
-    const { data, code } = await product.getAll(params);
+    const [path, paramsString] = req.url.split("?");
 
-    res.writeHead(code, { "Content-Type": "application/json" });
-    res.end(data);
-  } else if (basePath.match(/\/assignments\/assignment\/products\/\w+/) && req.method === "GET") {
-    const id = basePath.split("/")[3];
+    if( path === "/api/peoples") {
+        const params = parseURLParams(paramsString);
     
-    const { data, code } = await product.getById(id);
+        const { code, data} = await people.getAll(params);
 
-    res.writeHead(code, { "Content-Type": "application/json" });
-    res.end(data); 
-  } else {
-    res.writeHead(404, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ message: "Route Not Found" }));
-  }
-});
+        res.writeHead(code, { "Content-Type": "application/json" });
+        res.end(data);
+    } else if(path.match(/\/api\/peoples\/\w+/)) {
+         const id = path.split("/")[3];
 
-const PORT = 8888;
+         const { code, data } = await people.getById(id);
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+         res.writeHead(code, {"Content-Type" : "application/json"});
+         res.end(data);
+    } else {
+        res.writeHead(404,{"Content-Type" : "application/json"} )
+        res.end('No router found!')
+    }
+    
+})
 
-module.exports = server;
+server.listen(8888);
