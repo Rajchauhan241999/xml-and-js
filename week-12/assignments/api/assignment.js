@@ -201,7 +201,7 @@ const resetTable = () => {
     table.innerHTML = "";
     const inputControl = document.getElementById(`input-term`);
     inputControl.value = "";
-    window.location = 'http://127.0.0.1:5500/week-12/index1.html'
+    window.location = 'http://127.0.0.1:5500/week-12/assignments/dist/index.html'
 
     let data = [
       {
