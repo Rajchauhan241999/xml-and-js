@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 2</title>
+        <style>
+            input, select, label, fieldset {
+                margin: 10px;
+            }
+            fieldset {
+                max-width: fit-content;
+            }
+
+            table, td{
+                border: 2px solid;
+                border-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Employee Retention Information</h1>
+        <form id="myForm" >
+            Find: <input type="text" name="input" id="input-value-term" placeholder="Please enter Value here"/>
+            <select name="filters" id="filter">
+                <option value="none">None</option>
+                <option value="id">Id</option>
+                <option value="first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="email">Email</option>
+                <option value="gender">Gender</option>
+                <option value="phone">Phone</option>
+                <option value="salary">Salary</option>
+                <option value="department">Department</option>
+                
+            </select>
+
+            <fieldset>                
+                <legend>employee left or stay ?</legend>
+                <input type="radio" name="stay" value="none"/>
+                <label for="none">None</label>                            
+                <input type="radio" name="stay" value="stay"/>
+                <label for="selling">stay</label>                                
+                <input type="radio" name="stay" value="left"/>
+                <label for="buying">left</label>       
+            </fieldset>
+
+            <label>Department :</label>
+            <select name="department" id="department">
+                <option value="All">All</option>
+                <option value="Sales">Sales</option>
+                <option value="Acounting">Accounting</option>
+                <option value="HR">HR</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Management">Management</option>
+                <option value="Services">Services</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Business_Development">Business_Development</option>
+                <option value="Legal">Legal</option>
+                <option value="Training">Training</option>
+                <option value="RandD">RandD</option>
+            </select>
+            <br/>
+            <input type="submit" value="Filter"/>
+            <input type="reset" value="Reset"/>
+        </form>
+        <table>
+            <thead>
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Phone</th>
+              <th>Salary</th>
+              <th>Department</th>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+          <script type="text/javascript" src="./emp.js"></script>
+    </body>
+</html>
