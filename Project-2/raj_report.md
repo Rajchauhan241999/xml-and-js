@@ -12,7 +12,7 @@
 - Then I created employee.js file ,where I included all filters.
 
 - So here is my page below...
-![image info](./assets/0.JPG)
+- ![image info](./assets/0.JPG)
 
 ## Logic
 - getAllemployees function accepts multiple parameters and filters the data based on those parameters.
@@ -31,12 +31,15 @@
 - As a result, the user can search by any of the above fields by entering a value in the textbox shown below.
 
 - filter by firstname
-![image info](./assets/1.JPG)
+
+ ![image info](./assets/1.JPG)
 
 - filter by departments
+
 ![image info](./assets/2.JPG)
 
 - filter by gender
+
 ![image info](./assets/3.JPG)
 
 - filter by radio button
