@@ -1,6 +1,6 @@
 const http = require("http");
 
-const product = require("./html/bundle");
+const product = require("./api/employee");
 
 const parseURLParams = (value) => {
   const params = new URLSearchParams(value);

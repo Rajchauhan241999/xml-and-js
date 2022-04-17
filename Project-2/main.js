@@ -1,4 +1,4 @@
-const { getAllDealers, getDealerById } = require("./api/dealer");
+const { getAllemployees, getDealerById } = require("./api/employees");
 
 const renderTable = (data) => {
   const tableBody = document.getElementById("table-body");
@@ -28,7 +28,7 @@ const renderTable = (data) => {
 
 
 
-getAllDealers().then(({ data }) => renderTable(data));  
+getAllemployees().then(({ data }) => renderTable(data));  
 
 const onSubmit = (event) => {
   event.preventDefault();
@@ -40,13 +40,13 @@ const onSubmit = (event) => {
   if(term === `id`) {
     getDealerById(valueTerm).then(({ data }) => renderTable(data));
   } else {
-    getAllDealers(term,stay, department.toLowerCase(), valueTerm.toLowerCase()).then(({ data }) => renderTable(data));
+    getAllemployees(term,stay, department.toLowerCase(), valueTerm.toLowerCase()).then(({ data }) => renderTable(data));
   }
 };
 
 const onReset = () => {
   window.location.replace(window.location.pathname);
-  getAllDealers().then(({ data }) => renderTable(data));
+  getAllemployees().then(({ data }) => renderTable(data));
 };
 
 document.getElementById("myForm").addEventListener("submit", onSubmit);

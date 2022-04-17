@@ -1,35 +1,35 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-    const dealers = require("../data/mock_data.json");
+    const employees = require("../data/mock_data.json");
     
-    const getAllDealers = (term,stay, department, valueTerm) =>
+    const getAllemployees = (term,stay, department, valueTerm) =>
       new Promise((resolve) => {
-        let data = dealers;
+        let data = employees;
     
         if(term) {
     
             switch(term) {
                 
                 case "first_name":
-                    data = data.filter((dealer) => dealer.first_name.toLowerCase().includes(valueTerm));
+                    data = data.filter((employees) => employees.first_name.toLowerCase().includes(valueTerm));
                     break;
                 case "last_name":
-                    data = data.filter((dealer) => dealer.last_name.toLowerCase().includes(valueTerm));
+                    data = data.filter((employees) => employees.last_name.toLowerCase().includes(valueTerm));
                     break;
                 case "email":
-                    data = data.filter((dealer) => dealer.email.toLowerCase().includes(valueTerm));
+                    data = data.filter((employees) => employees.email.toLowerCase().includes(valueTerm));
                     break;
                 case "gender":
-                    data = data.filter((dealer) => dealer.gender.toLowerCase() === valueTerm.toLowerCase());
+                    data = data.filter((employees) => employees.gender.toLowerCase() === valueTerm.toLowerCase());
                     break;
                 
                 case "contact":
-                    data = data.filter((dealer) => dealer.contact.toLowerCase().includes(valueTerm));
+                    data = data.filter((employees) => employees.contact.toLowerCase().includes(valueTerm));
                     break;
                 case "salary":
-                    data = data.filter((dealer) => dealer.salary.toLowerCase().includes(valueTerm));
+                    data = data.filter((employees) => employees.salary.toLowerCase().includes(valueTerm));
                     break;
                 case "department":
-                        data = data.filter((dealer) => dealer.department.toLowerCase().includes(valueTerm));
+                        data = data.filter((employees) => employees.department.toLowerCase().includes(valueTerm));
                         break;
                 default:
                     // do nothing
@@ -42,18 +42,18 @@
             data = data.filter(({is_stay}) => stay === is_stay);
           }
         if(department && department != "all") {
-            data = data.filter((dealer) => dealer.company.toLowerCase() === department);
+            data = data.filter((employees) => employees.company.toLowerCase() === department);
         }
         
         resolve({ code: 200, data: data });
       });
     
-    const getDealerById = (id) =>
+    const getemployeesById = (id) =>
       new Promise((resolve) => {
-        const dealer = dealers.find((dealer) => dealer.id === Number(id.trim()));
+        const employees = employees.find((employees) => employees.id === Number(id.trim()));
     
-        if (dealer) {
-            resolve({ code: 200, data: Array(dealer) });
+        if (employees) {
+            resolve({ code: 200, data: Array(employees) });
         } else {
             resolve({
                 code: 404,
@@ -63,8 +63,8 @@
       });
     
     module.exports = {
-      getAllDealers,
-      getDealerById,
+      getAllemployees,
+      getemployeesById,
     };
     
     // build : browerift main.js -o dist/bundle.js
@@ -273,7 +273,7 @@
 {"id":200,"first_name":"Geoffrey","last_name":"Mucklow","email":"gmucklow5j@bloomberg.com","gender":"Male","phone":"555-301-0997","salary":"$64528.63","department":"Engineering"}]
 
     },{}],3:[function(require,module,exports){
-    const { getAllDealers, getDealerById } = require("./api/dealer");
+    const { getAllemployees, getemployeesById } = require("./api/employees");
     
     const renderTable = (data) => {
       const tableBody = document.getElementById("table-body");
@@ -303,7 +303,7 @@
     
     
    
-    getAllDealers().then(({ data }) => renderTable(data));  
+    getAllemployees().then(({ data }) => renderTable(data));  
     
     const onSubmit = (event) => {
       event.preventDefault();
@@ -313,18 +313,18 @@
       const stay = event.target.stay.value;
 
       if(term === `id`) {
-        getDealerById(valueTerm).then(({ data }) => renderTable(data));
+        getemployeesById(valueTerm).then(({ data }) => renderTable(data));
       } else {
-        getAllDealers(term,stay, department.toLowerCase(), valueTerm.toLowerCase()).then(({ data }) => renderTable(data));
+        getAllemployees(term,stay, department.toLowerCase(), valueTerm.toLowerCase()).then(({ data }) => renderTable(data));
       }
     };
     
     const onReset = () => {
       window.location.replace(window.location.pathname);
-      getAllDealers().then(({ data }) => renderTable(data));
+      getAllemployees().then(({ data }) => renderTable(data));
     };
     
     document.getElementById("myForm").addEventListener("submit", onSubmit);
     document.getElementById("myForm").addEventListener("reset", onReset);
     
-    },{"./api/dealer":1}]},{},[3]);
+    },{"./api/employees":1}]},{},[3]);

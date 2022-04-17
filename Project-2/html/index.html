@@ -17,7 +17,8 @@
         </style>
     </head>
     <body>
-        <h1>Employee Retention Information</h1>
+        <fieldset> 
+        <h1>Employee Information</h1>
         <form id="myForm" >
             Find: <input type="text" name="input" id="input-value-term" placeholder="Please enter Value here"/>
             <select name="filters" id="filter">
@@ -34,11 +35,11 @@
             </select>
 
             <fieldset>                
-                <legend>employee left or stay ?</legend>
+                <legend>Anyone Currently Selling or Buying ?</legend>
                 <input type="radio" name="stay" value="none"/>
                 <label for="none">None</label>                            
                 <input type="radio" name="stay" value="stay"/>
-                <label for="stay">stay</label>                                
+                <label for="selling">stay</label>                                
                 <input type="radio" name="stay" value="left"/>
                 <label for="left">left</label>       
             </fieldset>
@@ -76,5 +77,6 @@
             <tbody id="table-body"></tbody>
           </table>
           <script type="text/javascript" src="./emp.js"></script>
+        </fieldset>
     </body>
 </html>
