@@ -4,6 +4,7 @@
 # Employee Information
 
 ## Direct link to visit page
+- https://soft-boba-8b5bd4.netlify.app/
 
 - I generated data or a JSON file from https://www.mockaroo.com/ and received with 8 fields.
 - Created html form according to fields.
