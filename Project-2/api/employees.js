@@ -57,12 +57,12 @@ const getemployeesById = (id) =>
     } else {
         resolve({
             code: 404,
-            data: { message: `No car found for id ${id}` },
+            data: { message: `No emp found for id ${id}` },
         });
     }
   });
 
 module.exports = {
   getAllemployees,
-  getDealerById,
+  getemployeeById,
 };
