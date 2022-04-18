@@ -57,7 +57,7 @@
         } else {
             resolve({
                 code: 404,
-                data: { message: `No Car found for id ${id}` },
+                data: { message: `No  found for id ${id}` },
             });
         }
       });
@@ -67,7 +67,7 @@
       getemployeesById,
     };
     
-    // build : browerift main.js -o dist/bundle.js
+    // build : 
     },{"../data/mock_data.json":2}],2:[function(require,module,exports){
     module.exports=
     
